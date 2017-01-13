@@ -27,6 +27,7 @@
 		A4C739851E1B74D00091783D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C739841E1B74D00091783D /* MBProgressHUD.m */; };
 		A4C7398D1E1B75F80091783D /* MBProgressHUD+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C7398C1E1B75F80091783D /* MBProgressHUD+Toast.m */; };
 		A4C739901E1B77410091783D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C7398F1E1B77410091783D /* QuartzCore.framework */; };
+		A4D96D6D1E28C1F900CE082C /* CoreAnimation.org in Resources */ = {isa = PBXBuildFile; fileRef = A4D96D6C1E28C1F900CE082C /* CoreAnimation.org */; };
 		A4E39FF41E1B5FC000462C1A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E39FF31E1B5FC000462C1A /* main.m */; };
 		A4E39FF71E1B5FC000462C1A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E39FF61E1B5FC000462C1A /* AppDelegate.m */; };
 		A4E39FFD1E1B5FC000462C1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E39FFB1E1B5FC000462C1A /* Main.storyboard */; };
@@ -91,6 +92,7 @@
 		A4C7398B1E1B75F80091783D /* MBProgressHUD+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MBProgressHUD+Toast.h"; path = "Tool/MBProgressHUD+Toast.h"; sourceTree = "<group>"; };
 		A4C7398C1E1B75F80091783D /* MBProgressHUD+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MBProgressHUD+Toast.m"; path = "Tool/MBProgressHUD+Toast.m"; sourceTree = "<group>"; };
 		A4C7398F1E1B77410091783D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A4D96D6C1E28C1F900CE082C /* CoreAnimation.org */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CoreAnimation.org; sourceTree = "<group>"; };
 		A4E39FF31E1B5FC000462C1A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A4E39FF51E1B5FC000462C1A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A4E39FF61E1B5FC000462C1A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 		A4E39FE61E1B5FC000462C1A = {
 			isa = PBXGroup;
 			children = (
+				A4D96D6C1E28C1F900CE082C /* CoreAnimation.org */,
 				A4C739871E1B74EB0091783D /* lib */,
 				A4C7397C1E1B62B20091783D /* Tool */,
 				A4E39FF11E1B5FC000462C1A /* Basic */,
@@ -384,6 +387,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4D96D6D1E28C1F900CE082C /* CoreAnimation.org in Resources */,
 				A4E3A0021E1B5FC000462C1A /* LaunchScreen.storyboard in Resources */,
 				A4BD4B3D1E2888F40098C2BB /* ship.png in Resources */,
 				A4BD4B451E2896C10098C2BB /* pic2.png in Resources */,

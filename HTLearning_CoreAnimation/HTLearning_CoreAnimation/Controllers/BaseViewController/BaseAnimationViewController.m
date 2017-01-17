@@ -25,10 +25,10 @@
 
 -(void)resetView{
     self.containerView.frame = [UIView centerFrameOfScreenWithWidth:300 andHeight:300];
-    self.containerView.backgroundColor = [UIColor greenColor];
+    self.containerView.backgroundColor = [UIColor clearColor];
     
     self.playingLayer.frame = [self.containerView centerFrameOfViewWithWidth:50 andHeight:50];
-    self.playingLayer.backgroundColor = [UIColor blueColor].CGColor;
+    self.playingLayer.backgroundColor = [UIColor clearColor].CGColor;
     self.playingLayer.affineTransform = CGAffineTransformIdentity;//空
     self.playingLayer.actions = nil;
     
@@ -41,20 +41,20 @@
 
 -(void)setUpViews{
     self.containerView = [[UIView alloc]initWithFrame:[UIView centerFrameOfScreenWithWidth:300 andHeight:300]];
-    self.containerView.backgroundColor = [UIColor greenColor];
+    self.containerView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.containerView];
     
     
     self.playingLayer = [CALayer layer];
     self.playingLayer.frame = [self.containerView centerFrameOfViewWithWidth:50 andHeight:50];
-    self.playingLayer.backgroundColor = [UIColor blueColor].CGColor;
+    self.playingLayer.backgroundColor = [UIColor clearColor].CGColor;
     [self.containerView.layer addSublayer:self.playingLayer];
     
     self.helper = [CALayer layer];
     self.helper.frame = self.playingLayer.frame;
-    self.helper.backgroundColor = [UIColor orangeColor].CGColor;
+    self.helper.backgroundColor = [UIColor clearColor].CGColor;
     
-    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 100, [UIScreen mainScreen].bounds.size.width, 100) collectionViewLayout:[[UICollectionViewFlowLayout alloc]init]];
+    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(15, [UIScreen mainScreen].bounds.size.height - 100, [UIScreen mainScreen].bounds.size.width-30, 100) collectionViewLayout:[[UICollectionViewFlowLayout alloc]init]];
     
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
@@ -85,10 +85,14 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    UIButton *button = [self buttonForIndex:indexPath.row];
-    button.frame = cell.bounds;
-    [cell addSubview:button];
-    return cell;
+    if ([self respondsToSelector:@selector(itemForIndex:)]) {
+        UIControl *item = [self itemForIndex:indexPath.row];
+        item.frame = cell.bounds;
+        [cell addSubview:item];
+        return cell;
+    }
+    return nil;
+    
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -96,7 +100,11 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return [self buttonsCount];
+    if ([self respondsToSelector:@selector(itemsCount)]) {
+        return [self itemsCount];
+    }
+    
+    return 0;
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(nonnull UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(nonnull NSIndexPath *)indexPath{

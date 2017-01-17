@@ -14,6 +14,15 @@
 		A450391F1E238BC20063EFDE /* UIView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = A450391E1E238BC20063EFDE /* UIView+Common.m */; };
 		A45039221E24960B0063EFDE /* CALayer+ShowDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A45039211E24960A0063EFDE /* CALayer+ShowDetail.m */; };
 		A45039251E249D1A0063EFDE /* UIColor+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = A45039241E249D1A0063EFDE /* UIColor+Random.m */; };
+		A45D79071E2CCB6D00FB2C67 /* ShipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45D79061E2CCB6D00FB2C67 /* ShipViewController.m */; };
+		A45D790A1E2CD03D00FB2C67 /* MediaTimingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45D79091E2CD03D00FB2C67 /* MediaTimingViewController.m */; };
+		A45D790E1E2E107400FB2C67 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45D790D1E2E107400FB2C67 /* ListViewController.m */; };
+		A45D79111E2E10FC00FB2C67 /* LayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45D79101E2E10FC00FB2C67 /* LayersViewController.m */; };
+		A45D79151E2E116F00FB2C67 /* GradientLayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45D79141E2E116F00FB2C67 /* GradientLayerController.m */; };
+		A45D79181E2E18C900FB2C67 /* ReplicatorLayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45D79171E2E18C900FB2C67 /* ReplicatorLayerController.m */; };
+		A45D791D1E2E1E9700FB2C67 /* CAEmitterLayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45D791C1E2E1E9700FB2C67 /* CAEmitterLayerController.m */; };
+		A45D791F1E2E202F00FB2C67 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = A45D791E1E2E202F00FB2C67 /* star.png */; };
+		A45D79211E2E247A00FB2C67 /* moon.png in Resources */ = {isa = PBXBuildFile; fileRef = A45D79201E2E247A00FB2C67 /* moon.png */; };
 		A4BD4B2E1E2736090098C2BB /* ImplyAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BD4B2D1E2736090098C2BB /* ImplyAnimationViewController.m */; };
 		A4BD4B331E2793210098C2BB /* pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A4BD4B321E2793210098C2BB /* pic.jpg */; };
 		A4BD4B361E279C8C0098C2BB /* UIView+SCUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BD4B351E279C8C0098C2BB /* UIView+SCUtils.m */; };
@@ -68,6 +77,22 @@
 		A45039211E24960A0063EFDE /* CALayer+ShowDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CALayer+ShowDetail.m"; path = "Tool/CALayer+ShowDetail.m"; sourceTree = "<group>"; };
 		A45039231E249D1A0063EFDE /* UIColor+Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Random.h"; path = "Tool/UIColor+Random.h"; sourceTree = "<group>"; };
 		A45039241E249D1A0063EFDE /* UIColor+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Random.m"; path = "Tool/UIColor+Random.m"; sourceTree = "<group>"; };
+		A45D79051E2CCB6D00FB2C67 /* ShipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShipViewController.h; sourceTree = "<group>"; };
+		A45D79061E2CCB6D00FB2C67 /* ShipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipViewController.m; sourceTree = "<group>"; };
+		A45D79081E2CD03D00FB2C67 /* MediaTimingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaTimingViewController.h; sourceTree = "<group>"; };
+		A45D79091E2CD03D00FB2C67 /* MediaTimingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaTimingViewController.m; sourceTree = "<group>"; };
+		A45D790C1E2E107400FB2C67 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		A45D790D1E2E107400FB2C67 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		A45D790F1E2E10FC00FB2C67 /* LayersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayersViewController.h; sourceTree = "<group>"; };
+		A45D79101E2E10FC00FB2C67 /* LayersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayersViewController.m; sourceTree = "<group>"; };
+		A45D79131E2E116F00FB2C67 /* GradientLayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GradientLayerController.h; path = layers/GradientLayerController.h; sourceTree = "<group>"; };
+		A45D79141E2E116F00FB2C67 /* GradientLayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GradientLayerController.m; path = layers/GradientLayerController.m; sourceTree = "<group>"; };
+		A45D79161E2E18C900FB2C67 /* ReplicatorLayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReplicatorLayerController.h; path = layers/ReplicatorLayerController.h; sourceTree = "<group>"; };
+		A45D79171E2E18C900FB2C67 /* ReplicatorLayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReplicatorLayerController.m; path = layers/ReplicatorLayerController.m; sourceTree = "<group>"; };
+		A45D791B1E2E1E9700FB2C67 /* CAEmitterLayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAEmitterLayerController.h; path = layers/CAEmitterLayerController.h; sourceTree = "<group>"; };
+		A45D791C1E2E1E9700FB2C67 /* CAEmitterLayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CAEmitterLayerController.m; path = layers/CAEmitterLayerController.m; sourceTree = "<group>"; };
+		A45D791E1E2E202F00FB2C67 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		A45D79201E2E247A00FB2C67 /* moon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moon.png; sourceTree = "<group>"; };
 		A4BD4B281E24F95E0098C2BB /* ListDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListDefine.h; sourceTree = "<group>"; };
 		A4BD4B2C1E2736090098C2BB /* ImplyAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImplyAnimationViewController.h; sourceTree = "<group>"; };
 		A4BD4B2D1E2736090098C2BB /* ImplyAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImplyAnimationViewController.m; sourceTree = "<group>"; };
@@ -129,9 +154,11 @@
 		A45039121E2370020063EFDE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A4BD4B371E2879D30098C2BB /* 显示动画 */,
-				A4BD4B2B1E2735B10098C2BB /* 隐式动画 */,
 				A45039191E2370D10063EFDE /* BaseViewControllers */,
+				A45D790B1E2E0FB300FB2C67 /* 一些工具图层 */,
+				A4BD4B2B1E2735B10098C2BB /* 隐式动画 */,
+				A4BD4B371E2879D30098C2BB /* 显示动画 */,
+				A45D79011E2CC88200FB2C67 /* 图层时间 */,
 				A45039131E2370020063EFDE /* CALayerViewController.h */,
 				A45039141E2370020063EFDE /* CALayerViewController.m */,
 				A450391A1E238A060063EFDE /* CustomDrawViewController.h */,
@@ -145,8 +172,62 @@
 			children = (
 				A45039161E2370CD0063EFDE /* BaseAnimationViewController.h */,
 				A45039171E2370CD0063EFDE /* BaseAnimationViewController.m */,
+				A45D79051E2CCB6D00FB2C67 /* ShipViewController.h */,
+				A45D79061E2CCB6D00FB2C67 /* ShipViewController.m */,
+				A45D790C1E2E107400FB2C67 /* ListViewController.h */,
+				A45D790D1E2E107400FB2C67 /* ListViewController.m */,
 			);
 			name = BaseViewControllers;
+			sourceTree = "<group>";
+		};
+		A45D79011E2CC88200FB2C67 /* 图层时间 */ = {
+			isa = PBXGroup;
+			children = (
+				A45D79081E2CD03D00FB2C67 /* MediaTimingViewController.h */,
+				A45D79091E2CD03D00FB2C67 /* MediaTimingViewController.m */,
+			);
+			name = "图层时间";
+			sourceTree = "<group>";
+		};
+		A45D790B1E2E0FB300FB2C67 /* 一些工具图层 */ = {
+			isa = PBXGroup;
+			children = (
+				A45D79121E2E112300FB2C67 /* 基础渐变 */,
+				A45D79191E2E1E4B00FB2C67 /* 重复 */,
+				A45D791A1E2E1E7000FB2C67 /* 粒子效果 */,
+				A45D790F1E2E10FC00FB2C67 /* LayersViewController.h */,
+				A45D79101E2E10FC00FB2C67 /* LayersViewController.m */,
+			);
+			name = "一些工具图层";
+			sourceTree = "<group>";
+		};
+		A45D79121E2E112300FB2C67 /* 基础渐变 */ = {
+			isa = PBXGroup;
+			children = (
+				A45D79131E2E116F00FB2C67 /* GradientLayerController.h */,
+				A45D79141E2E116F00FB2C67 /* GradientLayerController.m */,
+			);
+			name = "基础渐变";
+			sourceTree = "<group>";
+		};
+		A45D79191E2E1E4B00FB2C67 /* 重复 */ = {
+			isa = PBXGroup;
+			children = (
+				A45D79161E2E18C900FB2C67 /* ReplicatorLayerController.h */,
+				A45D79171E2E18C900FB2C67 /* ReplicatorLayerController.m */,
+			);
+			name = "重复";
+			sourceTree = "<group>";
+		};
+		A45D791A1E2E1E7000FB2C67 /* 粒子效果 */ = {
+			isa = PBXGroup;
+			children = (
+				A45D791E1E2E202F00FB2C67 /* star.png */,
+				A45D79201E2E247A00FB2C67 /* moon.png */,
+				A45D791B1E2E1E9700FB2C67 /* CAEmitterLayerController.h */,
+				A45D791C1E2E1E9700FB2C67 /* CAEmitterLayerController.m */,
+			);
+			name = "粒子效果";
 			sourceTree = "<group>";
 		};
 		A4BD4B2B1E2735B10098C2BB /* 隐式动画 */ = {
@@ -386,9 +467,11 @@
 			files = (
 				A4E3A0021E1B5FC000462C1A /* LaunchScreen.storyboard in Resources */,
 				A4BD4B3D1E2888F40098C2BB /* ship.png in Resources */,
+				A45D79211E2E247A00FB2C67 /* moon.png in Resources */,
 				A4BD4B451E2896C10098C2BB /* pic2.png in Resources */,
 				A4BD4B431E2896B40098C2BB /* pic3.png in Resources */,
 				A4E39FFF1E1B5FC000462C1A /* Assets.xcassets in Resources */,
+				A45D791F1E2E202F00FB2C67 /* star.png in Resources */,
 				A4BD4B331E2793210098C2BB /* pic.jpg in Resources */,
 				A4E39FFD1E1B5FC000462C1A /* Main.storyboard in Resources */,
 			);
@@ -418,6 +501,8 @@
 				A4BD4B3B1E287A4C0098C2BB /* PropertyAnimationViewController.m in Sources */,
 				A4C7397F1E1B67C90091783D /* StepManager.m in Sources */,
 				A45039251E249D1A0063EFDE /* UIColor+Random.m in Sources */,
+				A45D79111E2E10FC00FB2C67 /* LayersViewController.m in Sources */,
+				A45D79181E2E18C900FB2C67 /* ReplicatorLayerController.m in Sources */,
 				A450391C1E238A060063EFDE /* CustomDrawViewController.m in Sources */,
 				A4BD4B361E279C8C0098C2BB /* UIView+SCUtils.m in Sources */,
 				A4C739851E1B74D00091783D /* MBProgressHUD.m in Sources */,
@@ -425,8 +510,13 @@
 				A4E39FF71E1B5FC000462C1A /* AppDelegate.m in Sources */,
 				A4E39FF41E1B5FC000462C1A /* main.m in Sources */,
 				A4C7397B1E1B62AC0091783D /* UIView+EmptyView.m in Sources */,
+				A45D791D1E2E1E9700FB2C67 /* CAEmitterLayerController.m in Sources */,
+				A45D79151E2E116F00FB2C67 /* GradientLayerController.m in Sources */,
+				A45D790E1E2E107400FB2C67 /* ListViewController.m in Sources */,
+				A45D790A1E2CD03D00FB2C67 /* MediaTimingViewController.m in Sources */,
 				A45039111E236FFC0063EFDE /* HomeViewController.m in Sources */,
 				A450391F1E238BC20063EFDE /* UIView+Common.m in Sources */,
+				A45D79071E2CCB6D00FB2C67 /* ShipViewController.m in Sources */,
 				A45039181E2370CD0063EFDE /* BaseAnimationViewController.m in Sources */,
 				A4C7398D1E1B75F80091783D /* MBProgressHUD+Toast.m in Sources */,
 				A45039221E24960B0063EFDE /* CALayer+ShowDetail.m in Sources */,

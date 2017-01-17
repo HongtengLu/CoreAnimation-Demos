@@ -13,12 +13,11 @@
 #import "CustomDrawViewController.h"
 #import "PropertyAnimationViewController.h"
 #import "TransitionViewController.h"
+#import "MediaTimingViewController.h"
 
-@interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface HomeViewController ()
 
-@property (nonatomic,strong) UITableView *tableView;
 
-@property (nonatomic,strong) NSArray *dataSource;
 
 @end
 
@@ -28,79 +27,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(15, 64, [UIScreen mainScreen].bounds.size.width - 30, [UIScreen mainScreen].bounds.size.height -64) style:UITableViewStylePlain];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    [self.view addSubview:self.tableView];
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.titles = @[@"layer属性:anchorPoint 和 position",@"工具图层",@"隐式动画",@"显式属性动画",@"过渡动画",@"图层时间"];
+    self.controllers =@[@"CALayerViewController",@"LayersViewController",@"ImplyAnimationViewController",@"PropertyAnimationViewController",@"TransitionViewController",@"MediaTimingViewController"];
 }
 
-#pragma  mark TableView
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-    NSString *title = nil;
-    switch (indexPath.row) {
-        case 0:{
-            title = @"layer属性:anchorPoint 和 position";
-            break;
-        }case 1:{
-            title = @"隐式动画";
-            break;
-        }case 2:{
-            title = @"显式属性动画";
-            break;
-        }
-        case 3:{
-            title = @"过渡动画";
-            break;
-        }
-        default:
-            break;
-    }
-    cell.textLabel.text = title;
-    return cell;
-}
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UIViewController *vc = nil;
-    switch (indexPath.row) {
-        case 0:{
-            vc = [[CALayerViewController alloc]init];
-            break;
-        }case 1:{
-            vc = [[ImplyAnimationViewController alloc]init];
-            break;
-        }case 2:{
-            vc = [[PropertyAnimationViewController alloc]init];
-            break;
-        }case 3:{
-            vc = [[TransitionViewController alloc]init];
-            break;
-        }case 4:{
-            vc = [[CALayerViewController alloc]init];
-            break;
-        }
-            
-        default:
-            break;
-    }
-    [self.navigationController pushViewController:vc animated:YES];
-}
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 60;
-    
-}
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
-}
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
 
 /*
 #pragma mark - Navigation

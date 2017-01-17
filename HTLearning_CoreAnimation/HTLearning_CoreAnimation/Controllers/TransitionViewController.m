@@ -63,8 +63,7 @@
     transition.duration = 1;
     transition.subtype = self.subtypeButton.titleLabel.text;
     [self.imageView.layer addAnimation:transition forKey:nil];//如果使用 CATransition ,无论 -addAnimation:forKey: 的key参数传什么,内部都会自动使用 kCATransition .
-    
-//    CATransition *set = (CATransition *)[self.imageView.layer animationForKey:kCATransition];
+
     
     UIImage *currentImage = self.currentImage;
     NSUInteger index = [self.images indexOfObject:currentImage];
@@ -115,11 +114,11 @@
 }
 
 
--(NSUInteger)buttonsCount{
+-(NSUInteger)itemsCount{
     return  13;
 }
 
--(UIButton *)buttonForIndex:(NSInteger)index{
+-(UIControl *)itemForIndex:(NSInteger)index{
     UIButton *button = [self normalButton];
     NSString *title = nil;
     SEL selector = nil;

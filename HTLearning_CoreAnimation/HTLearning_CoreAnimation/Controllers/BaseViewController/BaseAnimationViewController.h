@@ -21,10 +21,12 @@
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 
+@property (nonatomic, assign) BOOL resetAfterPlaying;
+
 -(void)resetView;
 
--(NSUInteger)buttonsCount;
--(UIButton *)buttonForIndex:(NSInteger)index;
+-(NSUInteger)itemsCount;
+-(UIControl *)itemForIndex:(NSInteger)index;
 
 -(UIButton *)normalButton;
 

@@ -24,6 +24,7 @@
 -(void)backGroundColor{
     [self resetView];
     self.playingLayer.backgroundColor = [UIColor randomColor].CGColor;
+    
 }
 
 -(void)customTransaction{
@@ -87,12 +88,12 @@
     
 }
 
--(NSUInteger)buttonsCount{
+-(NSUInteger)itemsCount{
     return 6;
 }
 
 
--(UIButton *)buttonForIndex:(NSInteger)index{
+-(UIControl *)itemForIndex:(NSInteger)index{
     UIButton *button = [self normalButton];
     switch (index) {
         case 0:{

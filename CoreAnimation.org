@@ -118,8 +118,7 @@ self.layerView.layer.contentsGravity = kCaGravityResizeAspect
 **** (CGPathRef)shadowPath 自定义阴影形状
      我们知道图层阴影在有寄宿图的时候是通过寄宿图的形状来计算阴影形状的,这是非常消耗资源的.而如果我们事先提供一个 CGPathRef 类型来指定阴影的形状,就可以解决这个问题.
 
-     
-     
+          
 *** (CALayer)mask 图层蒙版
     有时候我们可能需要按照特定的形状裁剪图层的显示内容,这个时候 mask 就派上用场了,mask 也是一个 CALayer 类型,它表现得就像是拥有该属性的图层的子图层.
     如何使用 mask?我们要关心的只有 mask 的轮廓---即 mask 的 contents.一旦 mask 的大小比 layer 的小,mask 就会按照 mask.contents 的轮廓裁剪 layer 的可视部分.
@@ -165,6 +164,7 @@ self.layerView.layer.contentsGravity = kCaGravityResizeAspect
 *** CATextLayer
 *** CATransformLayer
 *** CAGradientLayer
+    
 *** CAReplicatorLayer
 *** CAScrollLayer
 *** CATiledLayer
@@ -352,7 +352,6 @@ self.playingLayer.backgroundColor = [UIColor randomColor].CGColor;
 #+end_src
      
      
-    
 **** CAAnimationGroup (动画组)
      CABasicAnimation和CAKeyframeAnimation仅仅作用于单独的属性，而CAAnimationGroup可以把这些动画组合在一起。
      关键属性: (NSArray<CAAnimation *>) animations 
@@ -412,3 +411,41 @@ self.playingLayer.backgroundColor = [UIColor randomColor].CGColor;
      - kCATransitionFromTop :: 
      - kCATransitionFromLeft :: 
      - kCATransitionFromRight :: 
+** 图层时间
+   动画需要时间,所以管理整个动画时间非常重要.Core Animation 管理时间的是 CAMediaTiming 协议.CALayer 和 CAAnimation 都遵守了这个协议.
+*** CAMediaTiming 概览
+    - @property CFTimeInterval beginTime; :: 指定了动画开始之前的延迟时间.这个延迟时间从动画添加到可见图层那一刻开始测量,默认为 0(动画立刻执行).
+    - @property CFTimeInterval duration; :: 指定了一次迭代动画的持续时间.
+    - @property float repeatCount; :: 指定了动画迭代的次数,如果 duration 的值为 2.0,repeatCount 的值为 2.5,那么完整的动画时间就是 5.
+    - @property float speed; :: 指定了动画所属图层时间的速度,默认为 1.0,小于 1.0 会减速,反之则会加速,比如 duration 为 1 的动画, 在 speed 为 2.0 的情况下, 0.5 秒就会执行完毕,在 speed 为 0.5 的情况下, 2秒才会执行完毕.
+    - @property CFTimeInterval timeOffset; :: 指定动画在一次迭代的某个时间点开始,值为 0.0 ~ 1.0;比如设置 0.5 就是在动画的一次迭代的一半的时间开始动画,但是动画并不会在当次迭代结束,而是会到下一个迭代的 timeOffset 处结束;
+    - @property CFTimeInterval repeatDuration; :: 让动画重复迭代指定的时间.
+    - @property BOOL autoreverses; :: 自动重复迭代,如果设置为 YES,动画将会一直循环.
+    - @property(copy) NSString *fillMode; :: 
+*** 层级时间
+    每个 CALayer 和 CAAnimation 都有自己的本地时间,与本地时间有关的三个属性分别为 speed,beginTime 和 timeOffset.每个图层时间都是相对于父图层时间的.比如,如果我们在 appDelegate 对 window 对象做如下设置:
+#+begin_src <Objective-c>
+    self.window.layer.speed = 100;
+#+end_src
+    我们会发现基于 window 视图的所有动画都被加速了(不包括 UIAlertView 这类独立于主窗口之外的视图动画).
+    对于层级时间属性的修改不会影响到父层级时间.
+*** 全局时间
+    Core Animation 有一个全局时间,马赫时间.马赫时间在同一设备上的所有进程是全局的,在不同设备不全局.获取马赫时间的方法:
+#+begin_src <Objetive-c>
+CFTimeInterval time = CACurrentMediaTime();
+#+end_src
+    马赫时间返回了设备自上次启动后的秒数,返回的值多少并不重要,重要的是它为所有的动画提供了一个相对的时间值.我们可以利用马赫时间来统筹各层级时间之间的关系.
+*** 时间转换
+    CALayer 提供了方便的转换不同图层时间的方法:
+#+begin_src <Objetive-c>
+- (CFTimeInterval)convertTime:(CFTimeInterval)t fromLayer:(CALayer *)l; 
+- (CFTimeInterval)convertTime:(CFTimeInterval)t toLayer:(CALayer *)l;
+#+end_src
+    
+    
+*** 时间属性的应用
+    有时候会有在动画过程中对动画进行修改的需求,但是我们不可以通过保存 CAAnimation 的指针来达到修改动画的目的,因为动画被添加到图层的时候是做了拷贝的.所以对原始动画对象的操作不会影响到图层动画的效果.或者我们可以通过 -animationForKey: 来获取图层动画对象,然后修改?同样行不通,直接修改 animation 属性程序会跑出异常.
+    正确的做法应该是通过 CAMediaTiming 来对动画进行修改.我们知道 CAaLyer 遵守了 CAMediaTiming 协议.通过该协议我们可以修改正在进行的动画的一些值--对 CALayer 进行修改.
+**** 暂停,倒回和快进 (speed)
+     上面已经提到图层的时间相关属性都是相对于父图层的,影响子图层但是不影响父图层.所以我们可以通过 speed 来实现动画的暂停,倒回和快进的功能.
+     如果将图层的 speed 设置为 0,图层将会暂停任何添加到图层上的动画,大于 0 则会快进,小于 0 则会倒回动画

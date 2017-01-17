@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ListViewController.h"
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : ListViewController
 
 @end

@@ -6,8 +6,8 @@
 //  Copyright © 2017年 HT. All rights reserved.
 //
 
-#import "BaseAnimationViewController.h"
+#import "ShipViewController.h"
 
-@interface PropertyAnimationViewController : BaseAnimationViewController
+@interface PropertyAnimationViewController : ShipViewController
 
 @end

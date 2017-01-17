@@ -44,38 +44,32 @@
 }
 -(void)keyframe_path_animation{
     [self resetView];
-    
-    UIBezierPath *bezierPath = [[UIBezierPath alloc] init];
-    [bezierPath moveToPoint:CGPointMake(0, 150)];
-    [bezierPath addCurveToPoint:CGPointMake(300, 150) controlPoint1:CGPointMake(75, 0) controlPoint2:CGPointMake(225, 300)];
-    
-    //draw the path using a CAShapeLayer
-    CAShapeLayer *pathLayer = [CAShapeLayer layer];
-    pathLayer.path = bezierPath.CGPath;
-    pathLayer.fillColor = [UIColor clearColor].CGColor;
-    pathLayer.strokeColor = [UIColor redColor].CGColor;
-    pathLayer.lineWidth = 3.0f;
+    if (![self.containerView.layer.sublayers containsObject:self.shipLayer]) {
+        [self.containerView.layer addSublayer:self.shipLayer];
+    }
+    CAShapeLayer *pathLayer = [self shipPathLayer];
     [self.containerView.layer addSublayer:pathLayer];
     
-    //add the ship
-    CALayer *shipLayer = [CALayer layer];
-    shipLayer.frame = CGRectMake(0, 0, 64, 64);
-    shipLayer.position = CGPointMake(0, 150);
-    shipLayer.contents = (__bridge id)[UIImage imageNamed: @"ship.png"].CGImage;
-    [self.containerView.layer addSublayer:shipLayer];
+    [CATransaction begin];
     
     //create the keyframe animation
     CAKeyframeAnimation *animation = [CAKeyframeAnimation animation];
     animation.keyPath = @"position";
     animation.duration = 4.0;
-    animation.path = bezierPath.CGPath;
+    animation.path = pathLayer.path;
     animation.rotationMode = kCAAnimationRotateAuto;
     
+    [self.shipLayer addAnimation:animation forKey:nil];
     
-    [shipLayer addAnimation:animation forKey:nil];
+    [CATransaction setCompletionBlock:^{
+        [pathLayer removeFromSuperlayer];
+        [self.shipLayer removeFromSuperlayer];
+    }];
+    [CATransaction commit];
 }
 
 -(void)groupAnimation{
+    
     //create a path
     UIBezierPath *bezierPath = [[UIBezierPath alloc] init];
     [bezierPath moveToPoint:CGPointMake(0, 150)];
@@ -122,11 +116,15 @@
     [CATransaction commit];
 }
 
--(NSUInteger)buttonsCount{
+
+
+-(NSUInteger)itemsCount{
     return 4;
 }
 
--(UIButton *)buttonForIndex:(NSInteger)index{
+
+
+-(UIControl *)itemForIndex:(NSInteger)index{
     UIButton *button = [self normalButton];
     switch (index) {
         case 0:{

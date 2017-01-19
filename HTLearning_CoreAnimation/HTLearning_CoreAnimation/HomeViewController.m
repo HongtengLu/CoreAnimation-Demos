@@ -27,8 +27,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.titles = @[@"layer属性:anchorPoint 和 position",@"工具图层",@"隐式动画",@"显式属性动画",@"过渡动画",@"图层时间"];
-    self.controllers =@[@"CALayerViewController",@"LayersViewController",@"ImplyAnimationViewController",@"PropertyAnimationViewController",@"TransitionViewController",@"MediaTimingViewController"];
+    self.titles = @[@"layer属性:anchorPoint 和 position",@"工具图层",@"隐式动画",@"显式属性动画",@"过渡动画",@"图层时间",@"综合案例"];
+    self.controllers =@[@"CALayerViewController",@"LayersViewController",@"ImplyAnimationViewController",@"PropertyAnimationViewController",@"TransitionViewController",@"MediaTimingViewController",@"ComprehensiveCasesViewController"];
 }
 
 

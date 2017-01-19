@@ -28,6 +28,8 @@
 		A45D792D1E2F3AA200FB2C67 /* good.png in Resources */ = {isa = PBXBuildFile; fileRef = A45D792C1E2F3AA200FB2C67 /* good.png */; };
 		A45D79301E2F42AA00FB2C67 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = A45D792F1E2F42AA00FB2C67 /* UIImage+Color.m */; };
 		A45D79331E2F4A6D00FB2C67 /* ComprehensiveCasesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45D79321E2F4A6D00FB2C67 /* ComprehensiveCasesViewController.m */; };
+		A45D79381E3091CE00FB2C67 /* FireworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45D79371E3091CE00FB2C67 /* FireworkViewController.m */; };
+		A45D793B1E30930B00FB2C67 /* FireWorkView.m in Sources */ = {isa = PBXBuildFile; fileRef = A45D793A1E30930B00FB2C67 /* FireWorkView.m */; };
 		A4BD4B2E1E2736090098C2BB /* ImplyAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BD4B2D1E2736090098C2BB /* ImplyAnimationViewController.m */; };
 		A4BD4B331E2793210098C2BB /* pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A4BD4B321E2793210098C2BB /* pic.jpg */; };
 		A4BD4B361E279C8C0098C2BB /* UIView+SCUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BD4B351E279C8C0098C2BB /* UIView+SCUtils.m */; };
@@ -107,6 +109,10 @@
 		A45D792F1E2F42AA00FB2C67 /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Color.m"; path = "Tool/UIImage+Color.m"; sourceTree = "<group>"; };
 		A45D79311E2F4A6D00FB2C67 /* ComprehensiveCasesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComprehensiveCasesViewController.h; path = "综合案例/ComprehensiveCasesViewController.h"; sourceTree = "<group>"; };
 		A45D79321E2F4A6D00FB2C67 /* ComprehensiveCasesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComprehensiveCasesViewController.m; path = "综合案例/ComprehensiveCasesViewController.m"; sourceTree = "<group>"; };
+		A45D79361E3091CE00FB2C67 /* FireworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FireworkViewController.h; path = "综合案例/FireworkViewController.h"; sourceTree = "<group>"; };
+		A45D79371E3091CE00FB2C67 /* FireworkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FireworkViewController.m; path = "综合案例/FireworkViewController.m"; sourceTree = "<group>"; };
+		A45D79391E30930B00FB2C67 /* FireWorkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FireWorkView.h; path = "综合案例/烟花/FireWorkView.h"; sourceTree = "<group>"; };
+		A45D793A1E30930B00FB2C67 /* FireWorkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FireWorkView.m; path = "综合案例/烟花/FireWorkView.m"; sourceTree = "<group>"; };
 		A4BD4B281E24F95E0098C2BB /* ListDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListDefine.h; sourceTree = "<group>"; };
 		A4BD4B2C1E2736090098C2BB /* ImplyAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImplyAnimationViewController.h; sourceTree = "<group>"; };
 		A4BD4B2D1E2736090098C2BB /* ImplyAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImplyAnimationViewController.m; sourceTree = "<group>"; };
@@ -249,7 +255,7 @@
 			children = (
 				A45D79311E2F4A6D00FB2C67 /* ComprehensiveCasesViewController.h */,
 				A45D79321E2F4A6D00FB2C67 /* ComprehensiveCasesViewController.m */,
-				A45D79251E2F383400FB2C67 /* New Group */,
+				A45D79251E2F383400FB2C67 /* 烟花 */,
 				A45D79241E2F365400FB2C67 /* 弹窗抖动 */,
 				A45D79231E2F364900FB2C67 /* 点赞效果 */,
 			);
@@ -275,11 +281,15 @@
 			name = "弹窗抖动";
 			sourceTree = "<group>";
 		};
-		A45D79251E2F383400FB2C67 /* New Group */ = {
+		A45D79251E2F383400FB2C67 /* 烟花 */ = {
 			isa = PBXGroup;
 			children = (
+				A45D79361E3091CE00FB2C67 /* FireworkViewController.h */,
+				A45D79371E3091CE00FB2C67 /* FireworkViewController.m */,
+				A45D79391E30930B00FB2C67 /* FireWorkView.h */,
+				A45D793A1E30930B00FB2C67 /* FireWorkView.m */,
 			);
-			name = "New Group";
+			name = "烟花";
 			sourceTree = "<group>";
 		};
 		A4BD4B2B1E2735B10098C2BB /* 隐式动画 */ = {
@@ -567,11 +577,13 @@
 				A45D792B1E2F3A0F00FB2C67 /* CommendButton.m in Sources */,
 				A45039151E2370020063EFDE /* CALayerViewController.m in Sources */,
 				A4E39FF71E1B5FC000462C1A /* AppDelegate.m in Sources */,
+				A45D793B1E30930B00FB2C67 /* FireWorkView.m in Sources */,
 				A4E39FF41E1B5FC000462C1A /* main.m in Sources */,
 				A4C7397B1E1B62AC0091783D /* UIView+EmptyView.m in Sources */,
 				A45D791D1E2E1E9700FB2C67 /* CAEmitterLayerController.m in Sources */,
 				A45D79301E2F42AA00FB2C67 /* UIImage+Color.m in Sources */,
 				A45D79151E2E116F00FB2C67 /* GradientLayerController.m in Sources */,
+				A45D79381E3091CE00FB2C67 /* FireworkViewController.m in Sources */,
 				A45D790E1E2E107400FB2C67 /* ListViewController.m in Sources */,
 				A45D790A1E2CD03D00FB2C67 /* MediaTimingViewController.m in Sources */,
 				A45039111E236FFC0063EFDE /* HomeViewController.m in Sources */,

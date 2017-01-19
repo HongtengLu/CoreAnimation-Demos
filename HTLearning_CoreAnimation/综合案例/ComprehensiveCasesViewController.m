@@ -16,8 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.titles = @[@"点赞效果"];
-    self.controllers = @[@"CommendViewController"];
+    self.titles = @[@"点赞效果",@"烟花"];
+    self.controllers = @[@"CommendViewController",@"FireworkViewController"];
 }
 
 
